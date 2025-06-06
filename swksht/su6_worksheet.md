@@ -1,25 +1,14 @@
-ProLUG Security Engineering 
-Unit 6 Worksheet 
+# ProLUG Security Engineering 
+## Unit 6 Worksheet 
  
-Instructions 
+*Instructions 
 Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until 
-the end to turn them in as a final submission packet. 
+the end to turn them in as a final submission packet. *
 
-Discussion Questions:
+## Discussion Questions:
 
-Unit 6 Discussion Post 1: Review chapter 15 of the SRE book: 
-https://google.github.io/building-secure-and-reliable-systems/raw/ch15.html#collect_appropriate_and_useful_logs. 
-There are 14 references at the end of the chapter. Follow them for more information. One of them: 
-https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/ should be reviewed for 
-question "c". 
-	a. What are some concepts that are new to you? 
-	b. There are 5 conclusions drawn, do you agree with them? Would you add or 
-	   remove anything from the list? 
-	c. In Julia Evan's debugging blog, which shows that debugging is just another 
-	   form of troubleshooting, what useful things do you learn about the 
-	   relationship between these topics? Are there any techniques you already do 
-	   that this helps solidify for you? 
-##start text copied from discord posting 
+### Unit 6 Discussion Post 1: Review chapter 15 of the SRE book: 
+
 
 https://discord.com/channels/611027490848374811/1368299025648058498/1369478670623703163
 
@@ -43,20 +32,13 @@ Symmetric key encryption uses a single key for both encryption and decryption.  
 NetFlow data contains a summarization of the data.
 The full data is kept for a short amount of time while the summary is kept for much longer.```
 
-##end text copied from discord posting 
 
-Unit 6 Discussion Post 2: Read https://sre.google/sre-book/monitoring-distributed-systems/  
+### Unit 6 Discussion Post 2: 
 
-	a. What interesting or new things do you learn in this reading? What may you 
-	   want to know more about? 
-	b. What are the "4 golden signals"? 
-	c. After reading these, why is immutability so important to logging? What do you 
-	   think the other required items are for logging to be effective? 
-##start text copied from discord posting 
 
 https://discord.com/channels/611027490848374811/1368299171282681928/1369429034399830128
 
-Admin Unit 6 Discussion Post 2: Read sre.google/sre-book/monitoring-distributed-systems/ 
+Unit 6 Discussion Post 2: Read sre.google/sre-book/monitoring-distributed-systems/ 
 *What interesting or new things do you learn in this reading? *
 ```
 White-box monitoring
@@ -80,10 +62,9 @@ Four golden signals (latency, traffic, errors, saturation)
 ```Correct timing of an error.  Knowing when `it` happened is essential.  This means ensuring the clocks of all the servers in sync with each other.  It is important to have tools that allow for comparing output in different time zones easily when supporting a global environment.  This is done via services like NTP
 ```
 
-##end text copied from discord posting 
 
 
-Definitions/Terminology 
+## Definitions/Terminology 
 
 Types of logs :
 	- Host 
@@ -91,27 +72,27 @@ Types of logs :
 	- Network 
 	- DB
 
-Log files are software-generated files of actions or errors.  This creates a historical record of what happened during execution.  The best logs will record descriptive information such as timestamps to give context to the rocrds. the above list describe different functions, network vs db vs host logs, each with their own relevant record of what happened.
+    > Log files are software-generated files of actions or errors.  This creates a historical record of what happened during execution.  The best logs will record descriptive information such as timestamps to give context to the rocrds. the above list describe different functions, network vs db vs host logs, each with their own relevant record of what happened.
 
 Immutable:
 
-Immutable logs are files that have not been tampered with and can be trusted as a honest source of what happened furing any period of time. The best way to ensure logs are immutable is to push/pull them to another server in real-time.  That way they can be accessed if the machine goes down and they can be trusted in situations where the server has been compromised.  Any superuser could change the logs on a system to cover their tracks or erase evidence of their mistakes so ensuring logs are immutable are a promise that must be kept by trusted individuals.
+    > Immutable logs are files that have not been tampered with and can be trusted as a honest source of what happened furing any period of time. The best way to ensure logs are immutable is to push/pull them to another server in real-time.  That way they can be accessed if the machine goes down and they can be trusted in situations where the server has been compromised.  Any superuser could change the logs on a system to cover their tracks or erase evidence of their mistakes so ensuring logs are immutable are a promise that must be kept by trusted individuals.
 
 Structure of Logs :
 	- RFC 3164 BSD Syslog 
 	- RFC 5424 IETF Syslog 
 	- Systemd Journal 
 
-syslog is a standard for system logs.  The two listed rfc's are different formats for how the logs are written.  The BSD standard is older than the IETF standard.  One example change is that the IETF adds the year to the timestamp. fyi -  they are called syslog messages... at least since the old days.... it has changed since they are now being sent to remote servers for immutability.
+    > syslog is a standard for system logs.  The two listed rfc's are different formats for how the logs are written.  The BSD standard is older than the IETF standard.  One example change is that the IETF adds the year to the timestamp. fyi -  they are called syslog messages... at least since the old days.... it has changed since they are now being sent to remote servers for immutability.
 
 
 Log rotation:
 
-LOg rotation has many benefits.  It ensures that log files do not become to large.  Troubleshooting outages usually involves only recent log messages so rotation of logs is a useful policy. Outages are also referred to as incident response and it usually focuses on the last few hours of logs.  Rotating logs is essentially breaking the logs up into smaller files based of date or size.
+    > LOg rotation has many benefits.  It ensures that log files do not become to large.  Troubleshooting outages usually involves only recent log messages so rotation of logs is a useful policy. Outages are also referred to as incident response and it usually focuses on the last few hours of logs.  Rotating logs is essentially breaking the logs up into smaller files based of date or size.
 
 Rsyslog:
 
-rsyslog is an updated version of the syslog daemon.  It introduces the features that allow us to send syslog messages off the specific server to a centralized syslog server that can collects logs from many different machines.  It supports various protocols that allow for logs to be sent to different types of collection servers.
+    > rsyslog is an updated version of the syslog daemon.  It introduces the features that allow us to send syslog messages off the specific server to a centralized syslog server that can collects logs from many different machines.  It supports various protocols that allow for logs to be sent to different types of collection servers.
 
 Log aggregation :
 	- ELK	-> an opensource set of programs called the ELK Stack
@@ -128,7 +109,12 @@ Log aggregation :
 
 SIEM :
 
-Security Information and Event Management
+    > Security Information and Event Management
+
+
+
+
+
 
 Notes During Lecture/Class: 
 

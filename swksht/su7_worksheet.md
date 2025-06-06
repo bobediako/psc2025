@@ -1,9 +1,9 @@
 # ProLUG Security Engineering
 
-# Unit 7 Worksheet
+## Unit 7 Worksheet
 
-## Instructions
-*Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
+*Instructions
+Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
 the end to turn them in as a final submission packet.*
 
 ## Discussion Questions:
@@ -151,6 +151,13 @@ Include cause-based information in symptom-based pages or on dashboards, but avo
     - Intrusion Prevention Systems - IPS
 	> these tools intercept and analyze traffic looking for malicious traffic.
 	> an IPS system can be placed after the firewall
+
+
+
+
+
+
+
 
 ## Notes During Lecture/Class:
 

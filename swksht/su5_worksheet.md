@@ -1,23 +1,15 @@
-ProLUG Security Engineering
-Unit 5 Worksheet
+# ProLUG Security Engineering
+## Unit 5 Worksheet
 
-Instructions
+*Instructions
 Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
-the end to turn them in as a final submission packet.
+the end to turn them in as a final submission packet.*
 
-Discussion Questions:
+## Discussion Questions:
 
-Unit 5 Discussion Post 1: Review the rocky documentation on Software management in
-Linux. https://docs.rockylinux.org/books/admin_guide/13-softwares/
+### Unit 5 Discussion Post 1: Review the rocky documentation on Software management in Linux. https://docs.rockylinux.org/books/admin_guide/13-softwares/
 
-1. What do you already understand about the process?
-2. What new things did you learn or pick up?
-3. What are the DNF plugins?
-    a. What is the use of the versionlock plugin?
-4. What is an EPEL?
-    a. Why do you need to consider this when using one?
 
-##start text copied from discord posting  
 https://discord.com/channels/611027490848374811/1365793131362123787/1367713844855701534
 
 Unit 5 Discussion Post 1: Review the rocky documentation on Software management in Linux. https://docs.rockylinux.org/books/admin_guide/13-softwares/
@@ -36,19 +28,9 @@ What is an EPEL?
 a.    Why do you need to consider this when using one?
 ```Many vendors will deny support of environments that have enabled epel packages.  This is because EPEL packages being open-source and apparently filled with tools that can allow users to change environments in unexpected ways.  Vendors prefer that environments are limited and tightly controlled.   Restricting the installation to a small set of known packages and tools is preferred for support purposes.```
 
-##end text copied from discord posting
 
-Unit 5 Discussion Post 2: Do a google search for "patching enterprise Linux" and try to
-wade through all of the noise.
+### Unit 5 Discussion Post 2: Do a google search for "patching enterprise Linux" and try to wade through all of the noise.
 
-1. What blogs (or AI) do you find that enumerates a list of steps or checklists to
-consider?
-2. After looking at that, how does patching a fleet of systems in the enterprise differ
-from pushing "update now" on your local desktop?
-    a. What seems to be the major considerations?
-    b. What seems to be the major roadblocks?
-
-##start text copied from discord posting  
 
 https://discord.com/channels/611027490848374811/1365793272513171607/1367856588186062858
 
@@ -75,50 +57,52 @@ Zero-day vulnerabilities also affect all types of systems.  But special care nee
 
 ```
 
-##end text copied from discord posting  
 
-Definitions/Terminology
+## Definitions/Terminology
 - Patching:
 
-OS patching is the process of applying updates to the systtem's software.  This is done to ensire the software remains free of vulnerabilities, has applied the most recent bug fixes and benefits from the newest features.  Performing patches on a regular and scheduled basis is a core function of system administration.
+    >OS patching is the process of applying updates to the systtem's software.  This is done to ensire the software remains free of vulnerabilities, has applied the most recent bug fixes and benefits from the newest features.  Performing patches on a regular and scheduled basis is a core function of system administration.
 
 - Repos:
 
-A software repository (repo) is a place (online server) for storing software in the form of packages (or bundled with tools like tar or zip).  These repos are expected to be free, safe tampering, accessible to all.  Many will include digital signatures so that the files obtained from the repos can be trusted as tamper-free/malware-free.
+    > A software repository (repo) is a place (online server) for storing software in the form of packages (or bundled with tools like tar or zip).  These repos are expected to be free, safe tampering, accessible to all.  Many will include digital signatures so that the files obtained from the repos can be trusted as tamper-free/malware-free.
 
 - Software:
 
-(This should be one of the first three questions :-)  Software is a computer program.  Computer programs are software. Computer programs a set of files that perfom actions and execute functions on a computer.  Software is compiled from a high-level language down to the simplest form which is machine language in specific to the cpu processor of the specific computer. Some computer programs are interpreted at excution time (just in time compilation).
+    > (This should be one of the first three questions :-)  Software is a computer program.  Computer programs are software. Computer programs a set of files that perfom actions and execute functions on a computer.  Software is compiled from a high-level language down to the simplest form which is machine language in specific to the cpu processor of the specific computer. Some computer programs are interpreted at excution time (just in time compilation).
 
 - EPEL:
 
-Extra Packages for Enterprise Linux.  These are additional packages that are useful but usually not officially supported by vendors for use in production systems.
+    > Extra Packages for Enterprise Linux.  These are additional packages that are useful but usually not officially supported by vendors for use in production systems.
 
 - BaseOS v. Appstream (in RHEL/Rocky)
 - Other types you can find?:
-BaseOS are the core set packages for RHEL.  AppStream are the extra and additional commonly used packages.
+    > BaseOS are the core set packages for RHEL.  AppStream are the extra and additional commonly used packages.
 
 
 - httpd:
 
-The Hyper Text Transfer Protocol ... it's daemon... functions a a webserver.
+    > The Hyper Text Transfer Protocol ... it's daemon... functions a a webserver.
 
 - GPG Key:
 
-GNU Privacy guard -an implementation of a public key cryptography.
-It uses two keys:
-A public key for encryption-  this is public and shared with anypne who wants to communicate with another person (the person waiting for receipt of the information)
-A private key is kept secret and it is used for decryption on the information after receipt.
-To send a file of information securely, involves the following steps, in order.
-The person (he) who wants to receive files first has to generate a public and private key pair.
-He then has to give the public key to the sender.
-The sender (she) will encrypt the files/information using the public key on her machine.
-The sender can now safely transmit the information over the internet,etc.
-The receiver can then use his private key to decrypt the files/information in privacy.
+    > GNU Privacy guard -an implementation of a public key cryptography.
+    > It uses two keys:
+    > A public key for encryption-  this is public and shared with anypne who wants to communicate with another person (the person waiting for receipt of the information)
+    > A private key is kept secret and it is used for decryption on the information after receipt.
+    > To send a file of information securely, involves the following steps, in order.
+    > The person (he) who wants to receive files first has to generate a public and private key pair.
+    > He then has to give the public key to the sender.
+    > The sender (she) will encrypt the files/information using the public key on her machine.
+    > The sender can now safely transmit the information over the internet,etc.
+    > The receiver can then use his private key to decrypt the files/information in privacy.
 
 - DNF/YUM:
 
-dnf and yum are package management tools using the rpm format of packages for RHEL based distros.
+    > dnf and yum are package management tools using the rpm format of packages for RHEL based distros.
+
+
+
 
 
 

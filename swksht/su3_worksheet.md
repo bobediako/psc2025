@@ -1,27 +1,14 @@
-ProLUG Security Engineering
-Unit 3 Worksheet
+# ProLUG Security Engineering
+## Unit 3 Worksheet
 
-Instructions
+* Instructions
 Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
-the end to turn them in as a final submission packet.
+the end to turn them in as a final submission packet. *
 
 Discussion Questions:
 
-Unit 3 Discussion Post 1: There are 16 Stigs that involve PAM for RHEL 9. Read the guide
-from Rocky Linux here: https://docs.rockylinux.org/guides/security/pam/
-1. What are the mechanisms and how do they affect PAM functionality?
-    a. Review /etc/pam.d/sshd on a Linux system, what is happening in that file
-       relative to these functionalities?
+Unit 3 Discussion Post 1: There are 16 Stigs that involve PAM for RHEL 9. Read the guide from Rocky Linux here: https://docs.rockylinux.org/guides/security/pam/
 
-2. What are the common PAM modules?
-    a. Review /etc/pam.d/sshd on a Linux system, what is happening in that file
-       relative to these functionalities?
-
-3. Look for a blog post or article about PAM that discusses real world application. Post
-   it here and give us a quick synopsis. (Bonus arbitrary points if you find one of our
-   ProLUG members blogs on the subject.)
-
-##start text copied from discord posting
 https://discord.com/channels/611027490848374811/1360636294673465626/1362539851420799078
 
 Security - Unit 3 Discussion Post 1: There are 16 Stigs that involve PAM for RHEL 9. Read the guide from Rocky Linux
@@ -73,17 +60,9 @@ pam_sepermit - PAM module to allow/deny login depending on SELinux enforcement s
 Blog 
 https://www.kuppingercole.com/blog/guest/10-use-cases-for-universal-privilege-management
 
-##end text copied from discord posting
 
-Unit 3 Discussion Post 2: Read about active directory (or LDAP) configurations of Linux via
-sssd here:
-https://docs.rockylinux.org/guides/security/authentication/active_directory_authentication/
-1. Why do we not want to just use local authentication in Linux? Or really any system?
-2. There are 4 SSSD STIGS.
-    a. What are they?
-    b. What do they seek to do with the system?
+### Unit 3 Discussion Post 2: Read about active directory (or LDAP) configurations of Linux via sssd here:
 
-##start text copied from discord posting
 https://discord.com/channels/611027490848374811/1360640634548912430/1362897695643275306
 
 Security - Unit 3 Discussion Post 2: Read about active directory (or LDAP) configurations of Linux via sssd here: https://docs.rockylinux.org/guides/security/authentication/active_directory_authentication/ 
@@ -101,43 +80,44 @@ V-258133 :  Prohibit the use of cached authentication after one day.
 Add an entry to the file /etc/sssd/sssd.conf
 ```
 
-##end text copied from discord posting
 
 
 
-Definitions/Terminology
+## Definitions/Terminology
 
 PAM:
 
-Pluggable Authentication Modules are a set of libraries that provide modular security features to systems. The related config file is pam.conf
+    > Pluggable Authentication Modules are a set of libraries that provide modular security features to systems. The related config file is pam.conf
 
 AD:
 
-Microsoft Active Directory.  A domain controller is used to authenticate and authorize users.  It's large market share in windows means that it is now the predominant service.  Using AD to authenticate users for both Microsoft and Linux servers allows admins to create networks with a centralized authentication system.  Apparently Micosoft uses a proprietary version of Kerberos to implement some of its protocols.  It also uses LDAP.
+    > Microsoft Active Directory.  A domain controller is used to authenticate and authorize users.  It's large market share in windows means that it is now the predominant service.  Using AD to authenticate users for both Microsoft and Linux servers allows admins to create networks with a centralized authentication system.  Apparently Micosoft uses a proprietary version of Kerberos to implement some of its protocols.  It also uses LDAP.
 
 LDAP:
 
-Lightweight Directory Access Protocol. This is a protocol and can  be used with various directory services.
+    > Lightweight Directory Access Protocol. This is a protocol and can  be used with various directory services.
 
 sssd:
 
-this is an extra set of packages and libraries.  It installs a daemon that will allow the host to act as a client for services provided by different machines on the network.  These different services are various remote identity providers suh as LDAP, Active Directory, Kerberos and FreeIPA.  These providers are centrally controlled directory services; sssd allows our client machine to use this information locally for login and identity management. The information is cached and is not permanent on the client.
+    > this is an extra set of packages and libraries.  It installs a daemon that will allow the host to act as a client for services provided by different machines on the network.  These different services are various remote identity providers suh as LDAP, Active Directory, Kerberos and FreeIPA.  These providers are centrally controlled directory services; sssd allows our client machine to use this information locally for login and identity management. The information is cached and is not permanent on the client.
 
 oddjob:
 
-oddjob in the movies is the henchman and driver for a bond villian.  oddjob in linux appears to be the henchman for redhat systems allowing unpriveleged processes to take privelged actions.
+    > oddjob in the movies is the henchman and driver for a bond villian.  oddjob in linux appears to be the henchman for redhat systems allowing unpriveleged processes to take privelged actions.
 
 krb5:
 
-Kerberos is a network authentication protocol created by MIT.  krb5 is the current version. Kerberos can be installed as either a client or a server.  As a client we can install the krb5-workstation package. /etc/krb5.conf is the config file.
+    > Kerberos is a network authentication protocol created by MIT.  krb5 is the current version. Kerberos can be installed as either a client or a server.  As a client we can install the krb5-workstation package. /etc/krb5.conf is the config file.
 
 realm/realmd:
 
-realmd is part of the kerberos suite.  Realms in Kerberos are like domains in DNS.  Realms are how a goup of machines are organized -meaning a group of machines belong to a realm.  The can be other groups of machines organized into different realms.  Users can be authenticated within their own realm.  They can also be authenticated into other realms using cross realm kerberos trusts.  Realms are logical groups. Also note that kerberos 4 is different than kerberos 5.
+    > realmd is part of the kerberos suite.  Realms in Kerberos are like domains in DNS.  Realms are how a goup of machines are organized -meaning a group of machines belong to a realm.  The can be other groups of machines organized into different realms.  Users can be authenticated within their own realm.  They can also be authenticated into other realms using cross realm kerberos trusts.  Realms are logical groups. Also note that kerberos 4 is different than kerberos 5.
 
 wheel (system group in RHEL):
 
-This is the super user group zero in all un*x systems since the 1980's...
+    > This is the super user group zero in all un*x systems since the 1980's...
+
+
 
 Notes During Lecture/Class:
 

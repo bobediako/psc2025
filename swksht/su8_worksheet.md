@@ -133,6 +133,10 @@ c.    *Why might it be good to know this as you design a CMDB or CI/CD pipeline?
 	> compares the baseline in the DMDB against a running system to detect changes for security
 
 
+
+
+
+
 ## Notes During Lecture/Class:
 
 Links:

@@ -2,10 +2,10 @@
 
 # Unit 9 Worksheet
 
-## Instructions
+*Instructions
 
 Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
-the end to turn them in as a final submission packet.
+the end to turn them in as a final submission packet.*
 
 
 ## Discussion Questions:
@@ -103,18 +103,24 @@ d.    Anti-replay
 	> 
 
 - Anti-Replay
-
+    > the anti-replay protocol provides IP packet-level security by making it impossible for a hacker to intercept message packets and insert changed packets into the data stream between a source and destination.
 
 - Plaintext
-
+    > basic characters that has not been changed or obsfucated.
+    > unencrypted readable version of text.
 
 - Cyphertext
-
+    > this is plaintext that has been transformed into a state that it cannot be read by humans without a tool to decrypt.
 
 - Fingerprints
-
+    > this is a hash that is unique to a a certificate and an be used to confirm it was valid
 
 - Passphrase (in key generation)
+    > a passphrase is a longer version of a password ... to be more secure.
+
+
+
+
 
 
 
