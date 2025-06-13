@@ -17,10 +17,12 @@ There are many good sources, even from Microsoft:
 https://microsoft.github.io/code-with-engineering-playbook/observability/log-vs-metric-vs-trace/
 
 a.    *How does the usage guidance of that blog (at bottom) align with your understanding of these three items?*
-```This helps me understand that installing a collector to receive various metris is of upmost importance.  Systems like Grafana, ELK & splunk allow us to properly track an occurence of an event.  We need the metrics to know where to start looking in the logs.
+```
+This helps me understand that installing a collector to receive various metris is of upmost importance.  Systems like Grafana, ELK & splunk allow us to properly track an occurence of an event.  We need the metrics to know where to start looking in the logs.
 ```
 b.    *What other useful blogs or AI write-ups were you able to find?*
-```https://betterstack.com/community/guides/observability/logging-metrics-tracing/
+```
+https://betterstack.com/community/guides/observability/logging-metrics-tracing/
 
 ```
 c.    *What is the usefulness of this in securing your system?*
