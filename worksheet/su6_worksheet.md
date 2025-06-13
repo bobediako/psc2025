@@ -17,20 +17,26 @@ Review chapter 15 of the SRE book: https://google.github.io/building-secure-and-
 There are 14 references at the end of the chapter. Follow them for more information. One of them:  https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/  should be reviewed for question “c”.
 a.    What are some concepts that are new to you?
 **Data anonymization or pseudonymization**
-```This is essential in financial and health service industries.  It allows for PII (Personally Identifiable Information) to be kept secret.  This is a function of privacy.```
+```
+This is essential in financial and health service industries.  It allows for PII (Personally Identifiable Information) to be kept secret.  This is a function of privacy.
+```
 
 **Encryption (public-private key )**
-```Encryption is a process to change the form of data /messages to so that only specific people can read it.  Also called assymmetric encryption.  Different keys are used to encrypt and decrypt messages. The public key encrypts the message.  The private key decrypts the message.
+```
+Encryption is a process to change the form of data /messages to so that only specific people can read it.  Also called assymmetric encryption.  Different keys are used to encrypt and decrypt messages. The public key encrypts the message.  The private key decrypts the message.
 Symmetric key encryption uses a single key for both encryption and decryption.  Like a password….  This is used for large amounts of data.
-
 ```
 **Cloud access security brokers (CASBs)**
-```CASB are proxies between end users and cloud services to enforce security controls and provide logging.```
+```
+CASB are proxies between end users and cloud services to enforce security controls and provide logging.
+```
 
 **full packet captures vs netflow data**
-```Full packet captures contain full-fidelity data- everything.
+```
+Full packet captures contain full-fidelity data- everything.
 NetFlow data contains a summarization of the data.
-The full data is kept for a short amount of time while the summary is kept for much longer.```
+The full data is kept for a short amount of time while the summary is kept for much longer.
+```
 
 
 ### Unit 6 Discussion Post 2: 
@@ -47,22 +53,28 @@ Four golden signals (latency, traffic, errors, saturation)
 ```
 
 *What may you want to know more about? *
-``` Ansible vs puppet vs chef
+```
+Ansible vs puppet vs chef
 ```
 
 *What are the “4 golden signals”?*
-``` Four golden signals (latency, traffic, errors, saturation)
+```
+Four golden signals (latency, traffic, errors, saturation)
 ```
 
 *After reading these, why is immutability so important to logging?*
-```logs need to simple and not overly verbose.  Logs need to provide the relevant information. *edit* immutable refers to protecting the logs from being changed, so that what has been recorded can be trusted. The importance of immutability is that the log should be a permanent and unchangeable record of the past.  We keep logs to record security and historical events.  But if a bad actor could change things in our system... if a bad actor can change the logs too... then we have no security.  As in the video- logs should be 'chiseled in stone.'``` ~~In this case, if the format is immutable ( unchanging set of permanent categories), then action can be taken on the output.  The four signals are the categories that need to be focused on so that problems can be identified and resolved via logs.~~
-
-
-*What do you think the other required items are for logging to be effective?*
-```Correct timing of an error.  Knowing when `it` happened is essential.  This means ensuring the clocks of all the servers in sync with each other.  It is important to have tools that allow for comparing output in different time zones easily when supporting a global environment.  This is done via services like NTP
+```
+logs need to simple and not overly verbose.  Logs need to provide the relevant information. *edit* immutable refers to protecting the logs from being changed, so that what has been recorded can be trusted. The importance of immutability is that the log should be a permanent and unchangeable record of the past.  We keep logs to record security and historical events.  But if a bad actor could change things in our system... if a bad actor can change the logs too... then we have no security.  As in the video- logs should be 'chiseled in stone.'
+``` 
+```
+In this case, if the format is immutable ( unchanging set of permanent categories), then action can be taken on the output.  The four signals are the categories that need to be focused on so that problems can be identified and resolved via logs.
 ```
 
 
+*What do you think the other required items are for logging to be effective?*
+```
+Correct timing of an error.  Knowing when `it` happened is essential.  This means ensuring the clocks of all the servers in sync with each other.  It is important to have tools that allow for comparing output in different time zones easily when supporting a global environment.  This is done via services like NTP
+```
 
 ## Definitions/Terminology 
 
