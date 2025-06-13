@@ -1,12 +1,11 @@
 # ProLUG Security Engineering
 
 ## Unit 4 Worksheet
-*
 Instructions
 Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
 the end to turn them in as a final submission packet.
-*
-Discussion Questions:
+
+## Discussion Questions:
 
 Unit 4 Discussion Post 1: Review some of the blogs here:
 https://discord.com/channels/611027490848374811/1363211160467407002/1365753668200038411
@@ -14,12 +13,20 @@ https://discord.com/channels/611027490848374811/1363211160467407002/136575366820
 Security - Unit 4 Discussion Post 1: Review some of the blogs here: https://aws.amazon.com/search/?searchQuery=air+gapped#facet_type=blogs&page=1 https://aws.amazon.com/blogs/security/tag/bastion-host/ or that you find on your own about air-gapped systems.
 
 What seems to be the theme of air-gapped systems?
-```The theme for air-gapped systems is that any connection to the internet is the greatest threat and that air-gapped systems provide the solution to this problem.```
-```The theme for bastions is that it is a single point of entry thus a single point of infiltration/exfiltration.```
+```
+The theme for air-gapped systems is that any connection to the internet is the greatest threat and that air-gapped systems provide the solution to this problem.
+The theme for bastions is that it is a single point of entry thus a single point of infiltration/exfiltration.
+```
 
 What seems to be their purpose?
-```An air-gapped systems’ purpose is completely isolate the system or network to protect the data and information on the network.  The main purpose is to ensure the security of the company or organizations computers.  It is the method used to ensure only insiders can access the systems.```
-```A bastion systems’ purpose is to act as a gateway into an internal network to the external internet.  The bastion systems’ purpose is to withstand attacks and provide a safe gateway into internal company resources.  It is usually placed in a DMZ, where anyone can access from the outside, such as a way to transfer files with vendors.```
+```
+An air-gapped systems’ purpose is completely isolate the system or network to protect the data and information on the network.  
+The main purpose is to ensure the security of the company or organizations computers.  
+It is the method used to ensure only insiders can access the systems.
+A bastion systems’ purpose is to act as a gateway into an internal network to the external internet.  
+The bastion systems’ purpose is to withstand attacks and provide a safe gateway into internal company resources.  
+It is usually placed in a DMZ, where anyone can access from the outside, such as a way to transfer files with vendors.
+```
 
 If you use google, or an AI, what are some of the common themes that come up when asked about air-gapped or bastion systems?
 - isolation
