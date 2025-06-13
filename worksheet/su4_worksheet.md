@@ -41,9 +41,10 @@ Security - Unit 4 Discussion Post 2: Do a Google or AI search of topics around j
 - putting users into virtual machines is another method of effectively jailing them
 
 **Can you think of when you’ve been jailed as a Linux user? If not, can you think of the useful ways to use a jail?**
-```I am jailed as a user when I use the ProLUG lab and the killercoda environments.  
+```
+I am jailed as a user when I use the ProLUG lab and the killercoda environments.  
 In the past I was also jailed when I entered a DMZ host to upload or download files from a vendor.    ```
-
+```
 
 
 ## Definitions/Terminology
