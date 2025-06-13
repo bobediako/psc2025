@@ -47,28 +47,20 @@ pam_namespace.so
 pam_keyinit.so
 pam_motd.so
 password-auth
-postlogin```
+postlogin
+```
 ### Review /etc/pam.d/sshd on a Linux system, what is happening in that file relative to these functionalities?
 
+```
 Here are 5 
-```
 pam_sepermit - PAM module to allow/deny login depending on SELinux enforcement state
-```
-```
 pam_nologin - Prevent non-root users from login
-```
-```
 pam_selinux - PAM module to set the default security context
-```
-```
 pam_loginuid - Record user's login uid to the process attribute
-```
-```
 pam_namespace - PAM module for configuring namespace for a session
-```
 Blog 
 https://www.kuppingercole.com/blog/guest/10-use-cases-for-universal-privilege-management
-
+```
 
 ### Unit 3 Discussion Post 2: Read about active directory (or LDAP) configurations of Linux via sssd here:
 
