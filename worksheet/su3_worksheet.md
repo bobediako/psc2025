@@ -52,11 +52,20 @@ postlogin```
 
 Here are 5 
 ```
-pam_sepermit - PAM module to allow/deny login depending on SELinux enforcement state```
-``` pam_nologin - Prevent non-root users from login```
-``` pam_selinux - PAM module to set the default security context```
-``` pam_loginuid - Record user's login uid to the process attribute```
-``` pam_namespace - PAM module for configuring namespace for a session```
+pam_sepermit - PAM module to allow/deny login depending on SELinux enforcement state
+```
+```
+pam_nologin - Prevent non-root users from login
+```
+```
+pam_selinux - PAM module to set the default security context
+```
+```
+pam_loginuid - Record user's login uid to the process attribute
+```
+```
+pam_namespace - PAM module for configuring namespace for a session
+```
 Blog 
 https://www.kuppingercole.com/blog/guest/10-use-cases-for-universal-privilege-management
 
@@ -67,10 +76,13 @@ https://discord.com/channels/611027490848374811/1360640634548912430/136289769564
 
 Security - Unit 3 Discussion Post 2: Read about active directory (or LDAP) configurations of Linux via sssd here: https://docs.rockylinux.org/guides/security/authentication/active_directory_authentication/ 
 1.    Why do we not want to just use local authentication in Linux? Or really any system?
-```Because most enterprises use windows as their desktop it makes sense to share the same username password with the Linux environment.  We have learned from the video that Microsoft AD has 90% of the market – so that product is the standard to connect to Linux servers.  This allows us to implement single sign on SSO across the environment using the username / password that users are most likely to remember… the one they use for their desktop.  This also helps administrators because they no longer have to maintain accounts for every single separate machine.  Another term that is used to describe this setup is Federated authentication.```
+```
+Because most enterprises use windows as their desktop it makes sense to share the same username password with the Linux environment.  We have learned from the video that Microsoft AD has 90% of the market – so that product is the standard to connect to Linux servers.  This allows us to implement single sign on SSO across the environment using the username / password that users are most likely to remember… the one they use for their desktop.  This also helps administrators because they no longer have to maintain accounts for every single separate machine.  Another term that is used to describe this setup is Federated authentication.
+```
 2.    There are 4 SSSD STIGS.
 a.    What are they? b. What do they seek to do with the system?
-```V-258019 : Allow users to manually invoke a session lock when leaving their terminal/desk.
+```
+V-258019 : Allow users to manually invoke a session lock when leaving their terminal/desk.
 Add an entry to the file /etc/dconf/db/local.d/00-security-settings
 V-258122 : enable smart card MultiFactor authentication.
 Add entry to"/etc/sssd/sssd.conf"

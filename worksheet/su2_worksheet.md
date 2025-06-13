@@ -24,7 +24,8 @@ The ingress points are how we make valid connections to the server.  These are h
 ```
 
 Why is it so important to understand the behaviors of processes that are connecting on those ingress points?
-```     During an attack or simply during a system wide failure, having a solid previous understanding of the system, and how it normally works is essential to troubleshooting.  Spending our free time and our quiet time, making sure that we know the ins and outs of our servers, makes things much easier during a crisis.```
+```
+During an attack or simply during a system wide failure, having a solid previous understanding of the system, and how it normally works is essential to troubleshooting.  Spending our free time and our quiet time, making sure that we know the ins and outs of our servers, makes things much easier during a crisis.```
 
 
 
