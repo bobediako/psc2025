@@ -14,11 +14,13 @@ https://discord.com/channels/611027490848374811/1358101042159419542/136039863435
 Security - Unit 2 Discussion Post 1: 
 There are 401 stigs for RHEL 9. If you filter in your stig viewer for sysctl there are 33 (mostly network focused), ssh - 39, and network - 58. Now there are some overlaps between those, but review them and answer these questions
 As systems engineers why are we focused on protecting the network portion of our server builds?
-```    Our network is how we interact with the server.  Gone of the days of servers in locked rooms.  The network is our primary point of failure for unauthorized access.  
+``` 
+Our network is how we interact with the server.  Gone of the days of servers in locked rooms.  The network is our primary point of failure for unauthorized access.  
 ```
 
 Why is it important to understand all the possible ingress points to our servers that exist?
-```    The ingress points are how we make valid connections to the server.  These are how the various outside services we rely upon connect to a machine.  Hackers or unauthorized users will sometimes enter systems through network vulnerabilities.  But it appears getting ahold of a valid user and pw is most common.  Network exploits, like two from 2017 called NotPetya and WannaCry, are probably the biggest threat.
+``` 
+The ingress points are how we make valid connections to the server.  These are how the various outside services we rely upon connect to a machine.  Hackers or unauthorized users will sometimes enter systems through network vulnerabilities.  But it appears getting ahold of a valid user and pw is most common.  Network exploits, like two from 2017 called NotPetya and WannaCry, are probably the biggest threat.
 ```
 
 Why is it so important to understand the behaviors of processes that are connecting on those ingress points?
