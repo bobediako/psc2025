@@ -17,27 +17,27 @@ https://discord.com/channels/611027490848374811/1365793131362123787/136771384485
 Unit 5 Discussion Post 1: Review the rocky documentation on Software management in Linux. https://docs.rockylinux.org/books/admin_guide/13-softwares/
 What do you already understand about the process?
 
-```I already understood the concept of packages. I’ve had past experience using the rpm command.```
+> I already understood the concept of packages. I’ve had past experience using the rpm command.
 
 What new things did you learn or pick up?
 
-```The yum and dnf commands.```
+> The yum and dnf commands.
 
 What are the DNF plugins?
 
-```Plugins add extra features to dnf,  For example local allows dnf to specify a local repository for rpm packages.```
+> Plugins add extra features to dnf,  For example local allows dnf to specify a local repository for rpm packages.
 
 a.    What is the use of the versionlock plugin?
 
-```Versionlock simplifies managing multiple versions of a package.  The repo being used may have many different versions of any given package,  versionlock allows an administrator to define the preferred and current version to use.  This helps to ensure all machines in the environment are using the same version.```
+> Versionlock simplifies managing multiple versions of a package.  The repo being used may have many different versions of any given package,  versionlock allows an administrator to define the preferred and current version to use.  This helps to ensure all machines in the environment are using the same version.
 
 What is an EPEL? 
 
-```EPEL is a curated set of extra packages for linux.  These extra packages are widely used open-source packages.  They are not considered necessary for standard enterprise environments and are not usually deployed to production serves.```
+> EPEL is a curated set of extra packages for linux.  These extra packages are widely used open-source packages.  They are not considered necessary for standard enterprise environments and are not usually deployed to production serves.
 
 a.    Why do you need to consider this when using one?
 
-```Many vendors will deny support of environments that have enabled epel packages.  This is because EPEL packages being open-source and apparently filled with tools that can allow users to change environments in unexpected ways.  Vendors prefer that environments are limited and tightly controlled.   Restricting the installation to a small set of known packages and tools is preferred for support purposes.```
+> Many vendors will deny support of environments that have enabled epel packages.  This is because EPEL packages being open-source and apparently filled with tools that can allow users to change environments in unexpected ways.  Vendors prefer that environments are limited and tightly controlled.   Restricting the installation to a small set of known packages and tools is preferred for support purposes.
 
 
 ### Unit 5 Discussion Post 2: Do a google search for "patching enterprise Linux" and try to wade through all of the noise.
@@ -59,22 +59,22 @@ https://netdepot.com/blog/8-patch-management-best-practices-you-should-know-abou
 
 2.    After looking at that, how does patching a fleet of systems in the enterprise differ from pushing “update now” on your local desktop?
 
-```
-Patching in the enterprise must be done after testing on a staging environment (at a minimum.) “Update now” is performed on desktops which are usually closed source and tightly controlled systems (with less likely problems).  Even though desktops also integrate many separate and distinct vendor products their risk is low because desktops, etc. can allow for downtime.
-```
+
+> Patching in the enterprise must be done after testing on a staging environment (at a minimum.) “Update now” is performed on desktops which are usually closed source and tightly controlled systems (with less likely problems).  Even though desktops also integrate many separate and distinct vendor products their risk is low because desktops, etc. can allow for downtime.
+
 
      a.    What seems to be the major considerations?
 
-```
-Enterprise systems usually have defined downtime schedules for patches and reboots.  If a desktop type client becomes bricked after an update they can usually be swapped out.  But enterprise systems must be successfully patched or successfully rolled back to their previous state within a change window.
-```
+
+> Enterprise systems usually have defined downtime schedules for patches and reboots.  If a desktop type client becomes bricked after an update they can usually be swapped out.  But enterprise systems must be successfully patched or successfully rolled back to their previous state within a change window.
+
 
     b.    What seems to be the major roadblocks?
 
-```
-Zero-day vulnerabilities also affect all types of systems.  But special care needs to taken when updating enterprise systems.  Performance or standard updates may need to be postponed and re-evaluated if an emergency patch is performed for a major vulnerability.
 
-```
+> Zero-day vulnerabilities also affect all types of systems.  But special care needs to taken when updating enterprise systems.  Performance or standard updates may need to be postponed and re-evaluated if an emergency patch is performed for a major vulnerability.
+
+
 
 ---
 
