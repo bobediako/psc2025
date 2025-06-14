@@ -72,15 +72,14 @@ Yes -in my experience the were always an operations team that receive the alerts
 ### Tracing
 > traces give us the big picture of what happens when a request is made to an application.
 > traces are essential to understanding the full path a request takes in your application.
+- Span
+> a span in one of the steps within a trace.
+> a trace consists of multiple spans
+> a span is distinct unit of work within a trace (e.g. a db query, api call)
+> spans can be nested to accurately describe sub tasks
 
-    - Span
-	> a span in one of the steps within a trace.
-	> a trace consists of multiple spans
-	> a span is distinct unit of work within a trace (e.g. a db query, api call)
-	> spans can be nested to accurately describe sub tasks
-
-    - Label
-	> a label represent the user interface items and inputs
+- Label	
+> a label represent the user interface items and inputs
 
 
 ### Time Series Database (TSDB)
@@ -141,26 +140,24 @@ Yes -in my experience the were always an operations team that receive the alerts
 	> this is done when alerts are too frequent
 
 ### Monitoring for defensive operations
-    - SIEM
-	> Security information and event management
-	> tools such as splunk, securonix, arcsight
-	> these tools aggregate data from many different sources
+- SIEM
+> Security information and event management
+> tools such as splunk, securonix, arcsight
+> these tools aggregate data from many different sources
 
+- Intrusion Detection Systems - IDS
+> these type of tools focus on monitoring network traffic for malicious activities
+> an IDS system can be placed before the firewall
 
-    - Intrusion Detection Systems - IDS
-	> these type of tools focus on monitoring network traffic for malicious activities
-	> an IDS system can be placed before the firewall
-
-
-    - Intrusion Prevention Systems - IPS
-	> these tools intercept and analyze traffic looking for malicious traffic.
-	> an IPS system can be placed after the firewall
-
+- Intrusion Prevention Systems - IPS
+> these tools intercept and analyze traffic looking for malicious traffic.
+> an IPS system can be placed after the firewall
 
 
 
 
 
+---
 
 
 ## Notes During Lecture/Class:
