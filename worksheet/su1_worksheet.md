@@ -13,13 +13,13 @@ The first question of this course is, "What is Security?"
 
 https://discord.com/channels/611027490848374811/1353052899047116912/1356016174869250228
 
-1 Describe the CIA Triad.
+### 1 Describe the CIA Triad.
 
 Confidentiality is focused on limiting authorized to the specific information via specific access.
 Integrity is about guarding information from tampering or improper modification.  Ensuring it is authentic,
 Availability is focused on ensuring proper, timely and consistently reliable access to information.
 
-2 What is the relationship between Authority, Will, and Force as they relate to security?
+### 2 What is the relationship between Authority, Will, and Force as they relate to security?
 
 At first, I assumed authority, will and force described the attacker to a system.
 That the attacker or threat lacks authority to enter parts of the system.
@@ -28,7 +28,7 @@ And will use types of force to bypass controls.
 But I see from everyone's responses 
 -that it really describes the 'drive' of the administrator and his team to protect the systems and environments.
 
-3 What are the types of controls and how do they relate to the above question?
+### 3 What are the types of controls and how do they relate to the above question?
 
 Proper implementation of Access controls is essential for Confidentiality and Authority.
 The integrity of a system can be protected by ensuring end to end encryption.
@@ -42,7 +42,7 @@ The proactive stance appears to directly connect to the architects, administrato
 https://discord.com/channels/611027490848374811/1353053002633711677/1360353373551067218
 
 
-Find a STIG or compliance requirement that you do not agree is necessary for a server or service build.
+### Find a STIG or compliance requirement that you do not agree is necessary for a server or service build.
 MariaDB Enterprise 10.x Security Technical Implementation Guide :: Version 2, Release: 3 Benchmark Date: 30 Jan 2025
 > Fourth from the top
 -    Vul ID: V-253669           
@@ -50,16 +50,16 @@ MariaDB Enterprise 10.x Security Technical Implementation Guide :: Version 2, Re
 -    Group Title: SRG-APP-000080-DB-000063
 
 
-What is the STIG or compliance requirement trying to do?
+### What is the STIG or compliance requirement trying to do?
 > This STIG describes a situation where users may be sharing account credentials.
 
-What category and type of control is it?
+### What category and type of control is it?
 > This is an Operational category and appears to be a preventative control.
 
-Defend why you think it is not necessary. 
+### Defend why you think it is not necessary. 
 > This stig is not necessary because it is too vague.  It is essentially jus a CYA (cover your assets) entry.  It vaguely says don’t let database users share accounts – expecting the dba or admin to track down all the possible shared users.  Then perform their own investigation.  It gives leeway to simply decide that some shared accounts are ok and others are not ok.  The STIG then tells the admin to delete accounts.
 
-(What type of defenses do you think you could present?)
+### (What type of defenses do you think you could present?)
 > My defense would be to contact the application managers for each of the related applications and ask for their documents on user access.  There is no practical way in any mid-to-large environment for the admin to just delete accounts because they think someone is sharing passwords.  
 > It’s likely that an application itself uses a shared account for various tasks.  This would be documented in the application managers’ documents.  It’s an app issue at heart. The admin can’t do anything about this stig and shouldn’t be removing accounts at will.
 

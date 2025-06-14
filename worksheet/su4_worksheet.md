@@ -44,6 +44,7 @@ Unit 4 Discussion Post 2: Do a Google or AI search of topics around jailing a us
 processes in Linux.
 https://discord.com/channels/611027490848374811/1363211294013915399/1365758289081798786
 Security - Unit 4 Discussion Post 2: Do a Google or AI search of topics around jailing a user or processes in Linux. 
+
 **Can you enumerate the methods of jailing users?**
 - use /etc/passwd (or nis, nss, ldap, ad) and the shell entry to limit users to a jailed script (instead of a shell) as shown in the ProLUG lecture and lab.  This also uses chroot to limit the user to a subset of files.
 - there is apparently a set of tools called jailkit with commands using the prefix ‘jk_’  Like jk_lsh, jk_uchroot, jk_jailuser
