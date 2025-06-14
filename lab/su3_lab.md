@@ -1,6 +1,7 @@
 # Unit 3 Lab - User Access and System Integration
 
 ### Does any of it look familiar to you?
+
 Here are some of the combinations of mechanism plus control flags 
 
 auth       substack
@@ -39,7 +40,7 @@ session    include
 
 ### What is the fix?
 > the fix is to edit the entry for UsePAM in /etc/ssh/sshd_config
-```
+```bash
 [root@hammer14 ~]# ls -l  /etc/ssh/sshd_config
 -rw-------. 1 root root 3668 Aug 17  2024 /etc/ssh/sshd_config
 [root@hammer14 ~]# grep -C 3 UsePAM /etc/ssh/sshd_config
@@ -55,7 +56,7 @@ session    include
 ```
 
 
-###What type of control is being implemented?
+### What type of control is being implemented?
 >  Pr.. Te..
 
 
@@ -67,7 +68,7 @@ session    include
 
 ### Can you remediate this finding?
 > It has been fixed / remediated using the following
-```
+```bash
 [root@hammer14 ~]# cp -p /etc/ssh/sshd_config /etc/ssh/.sshd_config.`date +%F`
 [root@hammer14 ~]# perl -pi -e "s/^#UsePAM no/UsePAM yes/" /etc/ssh/sshd_config
 [root@hammer14 ~]# diff /etc/ssh/sshd_config /etc/ssh/.sshd_config.`date +%F`
@@ -99,7 +100,7 @@ session    include
 
 ### Is it set properly on your system?
 > No it is disabled
-```
+```bash
 [root@hammer14 ~]# grep -C 3 "# even_deny"  /etc/security/faillock.conf
 #
 # Root account can become locked as well as regular accounts.
@@ -112,7 +113,7 @@ session    include
 
 ### How would you go about remediating this on your system?
 > I would fight this STIG... then I would give in and implement as follows...
-```
+```bash
 [root@hammer14 ~]# cp -p  /etc/security/faillock.conf  /etc/security/.faillock.conf.`date +%F`    ;   perl -pi -e "s/^# even_deny_root/even_deny_root/"  /etc/security/faillock.conf  ;  diff /etc/security/faillock.conf  /etc/security/.faillock.conf.`date +%F`
 49c49
 < even_deny_root

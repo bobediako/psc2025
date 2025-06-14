@@ -11,7 +11,7 @@
 Security Enhanced Linux (SELinux) implements Mandatory Access Control (MAC). Every process and system resource has a special security label called an SELinux context. A SELinux context, sometimes referred to as an SELinux label, is an identifier which abstracts away the system-level details and focuses on the security properties of the entity.
 `
 
-```
+```bash
 [root@hammer14 evaluation]# grep -v ^# /etc/selinux/config
 SELINUX=permissive
 SELINUXTYPE=targeted
@@ -42,7 +42,7 @@ Trust: FIPS ensures sensitive data is protected using validated, government-appr
 Relevance: Contractors working with federal agencies must often comply with FIPS, making it essential for businesses in the public sector.
 `
 
-```
+```bash
 [root@hammer14 evaluation]# sysctl -a | grep cryp
 crypto.fips_enabled = 0
 crypto.fips_name = Rocky Linux 9 - Kernel Cryptographic API
@@ -66,7 +66,7 @@ FIPS mode is disabled.
 
 ### What is the fix?
 >  No fix necessary
-```
+```bash
 [root@hammer14 evaluation]# sysctl -a | grep ^net.ipv4.tcp_s
 net.ipv4.tcp_sack = 1
 net.ipv4.tcp_shrink_window = 0
@@ -87,7 +87,7 @@ net.ipv4.tcp_syncookies = 1
 
 
 ### Can you remediate this finding?
-```
+```bash
 [root@hammer14 evaluation]# ls -ltr /etc/sysctl.d/
 total 8
 lrwxrwxrwx. 1 root root  14 Apr  7  2024 99-sysctl.conf -> ../sysctl.conf
@@ -95,7 +95,7 @@ lrwxrwxrwx. 1 root root  14 Apr  7  2024 99-sysctl.conf -> ../sysctl.conf
 -rw-r--r--. 1 root root 910 Apr  5 17:38 98-remediate.conf
 ```
 
-```
+```bash
 [root@hammer14 evaluation]# sysctl --system
 * Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
 * Applying /usr/lib/sysctl.d/50-coredump.conf ...
@@ -180,7 +180,7 @@ net.ipv4.conf.default.send_redirects = 0
 
 ### Is it set properly on your system?
 > Yes
-```
+```bash
 [root@hammer14 evaluation]# sysctl -a | grep ^net.ipv4.conf.default.accept_redirects
 net.ipv4.conf.default.accept_redirects = 0
 ```
@@ -207,7 +207,7 @@ The presence of "martian" packets (which have impossible addresses) as well as s
 ### Is it set properly on your system?
 > No
 
-```
+```bash
 [root@hammer14 evaluation]# sysctl -a | grep martians
 net.ipv4.conf.all.log_martians = 0
 net.ipv4.conf.default.log_martians = 0
@@ -227,7 +227,7 @@ net.ipv4.conf.lo.log_martians = 0
  t p
 
 ## Expose a network port through your firewall
-```
+```bash
 [root@hammer14 evaluation]# ls /usr/lib/firewalld/services | grep -i node
 kube-nodeport-services.xml
 prometheus-node-exporter.xml
@@ -248,13 +248,14 @@ success
 cockpit dhcpv6-client prometheus-node-exporter ssh
 ```
 ## Examine the default values for STIGS
+
 [root@hammer14 defaults]# grep -n 257784  main.yml
 23:# R-257784 RHEL-09-211045
 24:rhel9STIG_stigrule_257784_Manage: True
 25:rhel9STIG_stigrule_257784__etc_systemd_system_conf_Value: 'none'
 
 ## Create an Ansible playbook from OpenSCAP
-```
+```bash
 [root@hammer14 defaults]# cd /root
 [root@hammer14 ~]# mkdir openscap
 [root@hammer14 ~]# cd openscap

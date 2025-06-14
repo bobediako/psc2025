@@ -7,7 +7,7 @@
    /etc/httpd/conf.d/ssl.conf (for 2 of 4)
 
 ### Install httpd on your Hammer server
-```
+```bash
 [root@hammer14 ~]# systemctl stop wwclient
 [root@hammer14 ~]# dnf info httpd
 Last metadata expiration check: 0:12:00 ago on Sat May 24 12:08:27 2025.
@@ -168,7 +168,7 @@ tcp   LISTEN 0      511                *:80              *:*    users:(("httpd",
 
 ### Is it set properly on your system?
 > Yes by default
-```
+```bash
 [root@hammer14 ~]# ps -ef | grep http
 root       10198       1  0 12:21 ?        00:00:02 /usr/sbin/httpd -DFOREGROUND
 apache     10199   10198  0 12:21 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
@@ -182,7 +182,7 @@ root       10936    1947  0 18:41 pts/0    00:00:00 grep --color=auto http
 
 ## Building repos
 ### Start out by removing all your active repos
-```
+```bash
 [root@hammer14 ~]# cd /etc/yum.repos.d
 [root@hammer14 yum.repos.d]# mkdir old_archive
 [root@hammer14 yum.repos.d]# mv *.repo old_archive
@@ -192,7 +192,7 @@ No repositories available
 ```
 
 ### Mount the local repository and make a local repo
-```
+```bash
 [root@hammer14 yum.repos.d]# mount -o loop /lab_work/repos_and_patching/Rocky-9.5-x86_64-dvd.iso /mnt
 [root@hammer14 yum.repos.d]# df -h
 Filesystem                Size  Used Avail Use% Mounted on
@@ -246,7 +246,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 ```
 
 ### Test the local repository.
-```
+```bash
 [root@hammer14 yum.repos.d]# dnf repolist
 repo id                      repo name
 AppStream                    AppStream Packages Rocky Linux 9
@@ -265,20 +265,20 @@ HdrHistogram_c.i686                                  0.11.0-6.el9               
 ```
 
 ### Approximately how many are available?
-```
+```bash
 [root@hammer14 yum.repos.d]# dnf --disablerepo="*" --enablerepo="AppStream" list available | wc
    5591   16781  553403
 [root@hammer14 yum.repos.d]#
 ```
 ### Now use BaseOS.Approximately how many are available?
 
-```
+```bash
 [root@hammer14 yum.repos.d]# dnf --disablerepo="*" --enablerepo="BaseOS" list available | wc
    1002    3014   88092
 ```
 
 ### How many packages does it want to install?
-```
+```bash
 Transaction Summary
 ================================================================================
 Install  173 Packages
@@ -295,7 +295,7 @@ Operation aborted.
 
 ## Share out the local repository for your internal systems (tested on just this one system)
 > 
-```
+```bash
 [root@hammer14 yum.repos.d]# rpm -qa | grep -i httpd
 httpd-tools-2.4.62-1.el9_5.2.x86_64
 httpd-filesystem-2.4.62-1.el9_5.2.noarch
@@ -412,7 +412,7 @@ Operation aborted.
 ```
 ## Enterprise patching
 ### Complete the killercoda lab found here: https://killercoda.com/het-tanis/course/Ansible-Labs/102-Enterprise-Ansible-Patching
-```
+```bash
 controlplane:~$ echo "Installing scenario..."
 Installing scenario...
 controlplane:~$ while [ ! -f /tmp/finished ]; do sleep 1; done
@@ -934,7 +934,7 @@ Connection to node01 closed.
 controlplane:~/HPC_Deploy$
 ```
 ### *step 1 of lab*
-```
+```bash
 controlplane:~/HPC_Deploy$ cat 04_enterprise_patching.yaml
 - hosts: all
   gather_facts: true
@@ -952,7 +952,7 @@ controlplane:~/HPC_Deploy$ cat 04_enterprise_patching.yaml
   controlplane:~/HPC_Deploy$ 
 ```
 
-```
+```bash
 controlplane:~/HPC_Deploy$ cat 04_enterprise_patching.yaml
 - hosts: all
   gather_facts: true
