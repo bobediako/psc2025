@@ -3,10 +3,12 @@
 ## Apache STIGs Review
 ### Look at the 4 STIGs for "tls"
 ### What file is fixed for all of them to be remediated?
+
    /etc/httpd/conf.d/httpd.conf (for all 4)
    /etc/httpd/conf.d/ssl.conf (for 2 of 4)
 
 ### Install httpd on your Hammer server
+
 ```bash
 [root@hammer14 ~]# systemctl stop wwclient
 [root@hammer14 ~]# dnf info httpd
@@ -167,7 +169,9 @@ tcp   LISTEN 0      511                *:80              *:*    users:(("httpd",
 > Tech Preventative
 
 ### Is it set properly on your system?
+
 > Yes by default
+
 ```bash
 [root@hammer14 ~]# ps -ef | grep http
 root       10198       1  0 12:21 ?        00:00:02 /usr/sbin/httpd -DFOREGROUND
@@ -177,11 +181,14 @@ apache     10201   10198  0 12:21 ?        00:00:07 /usr/sbin/httpd -DFOREGROUND
 apache     10202   10198  0 12:21 ?        00:00:09 /usr/sbin/httpd -DFOREGROUND
 root       10936    1947  0 18:41 pts/0    00:00:00 grep --color=auto http
 ```
+
 ### How do you think SELINUX will help implement this control in an enforcing state? Or will it not affect it?
+
 > I think the use of SELINUX will definetly help implement this crontrol.  The process will only be able to affect a limited amount of files on the running system.
 
 ## Building repos
 ### Start out by removing all your active repos
+
 ```bash
 [root@hammer14 ~]# cd /etc/yum.repos.d
 [root@hammer14 yum.repos.d]# mkdir old_archive
@@ -265,11 +272,13 @@ HdrHistogram_c.i686                                  0.11.0-6.el9               
 ```
 
 ### Approximately how many are available?
+
 ```bash
 [root@hammer14 yum.repos.d]# dnf --disablerepo="*" --enablerepo="AppStream" list available | wc
    5591   16781  553403
 [root@hammer14 yum.repos.d]#
 ```
+
 ### Now use BaseOS.Approximately how many are available?
 
 ```bash
@@ -278,6 +287,7 @@ HdrHistogram_c.i686                                  0.11.0-6.el9               
 ```
 
 ### How many packages does it want to install?
+
 ```bash
 Transaction Summary
 ================================================================================
@@ -291,10 +301,12 @@ Operation aborted.
 ```
 
 ### How can you tell they're from different repos?
+
 > I could not tell from the output alone
 
 ## Share out the local repository for your internal systems (tested on just this one system)
 > 
+
 ```bash
 [root@hammer14 yum.repos.d]# rpm -qa | grep -i httpd
 httpd-tools-2.4.62-1.el9_5.2.x86_64
@@ -334,6 +346,8 @@ httpd   10202 apache    4u  IPv6  38862      0t0  TCP *:http (LISTEN)
 [root@hammer14 yum.repos.d]# cd /etc/httpd/conf.d
 [root@hammer14 conf.d]# vi repos.conf
 [root@hammer14 conf.d]# cat repos.conf
+```
+```xml
 <Directory "/mnt">
     Options Indexes FollowSymLinks
     AllowOverride None
@@ -345,6 +359,8 @@ Alias /repo /mnt
     AllowOverride None
     Require all granted
 </Location>
+```
+```bash
 [root@hammer14 conf.d]# systemctl restart httpd
 [root@hammer14 conf.d]# vi /etc/yum.repos.d/rocky9.repo
 [root@hammer14 conf.d]# cp -p /etc/yum.repos.d/rocky9.repo /etc/yum.repos.d/rocky9.repo.old
@@ -412,6 +428,7 @@ Operation aborted.
 ```
 ## Enterprise patching
 ### Complete the killercoda lab found here: https://killercoda.com/het-tanis/course/Ansible-Labs/102-Enterprise-Ansible-Patching
+
 ```bash
 controlplane:~$ echo "Installing scenario..."
 Installing scenario...
@@ -933,7 +950,9 @@ logout
 Connection to node01 closed.
 controlplane:~/HPC_Deploy$
 ```
+
 ### *step 1 of lab*
+
 ```bash
 controlplane:~/HPC_Deploy$ cat 04_enterprise_patching.yaml
 - hosts: all

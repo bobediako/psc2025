@@ -2,6 +2,7 @@
 
 ## Jailing a User
 ### Follow the lab here answering the questions below as you progress: https://killercoda.com/het-tanis/course/Linux-Labs/204-building-a-chroot-jail
+
 ```bash
 ubuntu:~$ echo "Installing scenario..."
 Installing scenario...

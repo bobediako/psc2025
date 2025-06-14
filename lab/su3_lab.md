@@ -29,6 +29,7 @@ session    include
 
 
 ## Filter by pam and see how many STIGS you have. (Why is it really only 16?)
+
 > It is less than 16 because one of the STIGS refer to spam, etc.
 
 
@@ -39,7 +40,9 @@ session    include
 
 
 ### What is the fix?
+
 > the fix is to edit the entry for UsePAM in /etc/ssh/sshd_config
+
 ```bash
 [root@hammer14 ~]# ls -l  /etc/ssh/sshd_config
 -rw-------. 1 root root 3668 Aug 17  2024 /etc/ssh/sshd_config
@@ -63,11 +66,14 @@ session    include
 
 
 ### Is it set properly on your system?
+
 > No it was disabled
 
 
 ### Can you remediate this finding?
+
 > It has been fixed / remediated using the following
+
 ```bash
 [root@hammer14 ~]# cp -p /etc/ssh/sshd_config /etc/ssh/.sshd_config.`date +%F`
 [root@hammer14 ~]# perl -pi -e "s/^#UsePAM no/UsePAM yes/" /etc/ssh/sshd_config
@@ -87,19 +93,25 @@ session    include
 
 
 ### What is the problem?
+
 > This is a request tolock out the root account upon 3 wrong tries
 
 ### What is the fix?
+
 > the suggested fix is to use the faillock feature
 
 ### What type of control is being implemented?
+
 > Te Pr
 
 ### Are there any major implications to think about with this change on your system? Why or why not?
+
 > Yes this appears to be a very dangerous and disruptive setting. Any wrong attemps will directly impact a sysadmin's ability to work on the system.
 
 ### Is it set properly on your system?
+
 > No it is disabled
+
 ```bash
 [root@hammer14 ~]# grep -C 3 "# even_deny"  /etc/security/faillock.conf
 #
@@ -112,7 +124,9 @@ session    include
 ```
 
 ### How would you go about remediating this on your system?
+
 > I would fight this STIG... then I would give in and implement as follows...
+
 ```bash
 [root@hammer14 ~]# cp -p  /etc/security/faillock.conf  /etc/security/.faillock.conf.`date +%F`    ;   perl -pi -e "s/^# even_deny_root/even_deny_root/"  /etc/security/faillock.conf  ;  diff /etc/security/faillock.conf  /etc/security/.faillock.conf.`date +%F`
 49c49
@@ -182,7 +196,8 @@ password    requisite     pam_pwquality.so try_first_pass local_users_only retry
 ## OpenLDAP Setup
 ### Install and configure OpenLDAP
 ### 1. Stop the warewulf client
-```
+
+```bash
 [root@hammer14 ~]# systemctl status wwclient
 ● wwclient.service - Warewulf node runtime overlay update
      Loaded: loaded (/etc/systemd/system/wwclient.service; enabled; preset: dis>
@@ -209,7 +224,8 @@ May 23 15:32:59 hammer14 wwclient[792]: 2025/05/23 15:32:59 Updating system
 
 ### 2. Edit your /etc/hosts file
 ### Look for and edit the line that has your current server
-```
+
+```bash
 [root@hammer14 ~]# cp -p /etc/hosts /etc/.hosts.`date +%F`
 [root@hammer14 ~]# perl -pi -e "s/hammer14 hammer14-default/hammer14 hammer14-default ldap.prolug.lan ldap/" /etc/hosts
 [root@hammer14 ~]# diff /etc/hosts /etc/.hosts.`date +%F`                       19c19
@@ -219,7 +235,8 @@ May 23 15:32:59 hammer14 wwclient[792]: 2025/05/23 15:32:59 Updating system
 ```
 
 ### 3. Setup dnf repo
-```
+
+```bash
 [root@hammer14 ~]# dnf repolist | wc
       6      43     318
 [root@hammer14 ~]# dnf repolist
@@ -290,7 +307,8 @@ Complete!
 ```
 
 ### 4. Start slapd systemctl
-```
+
+```bash
 [root@hammer14 ~]# systemctl start slapd
 [root@hammer14 ~]# systemctl status slapd
 ● slapd.service - OpenLDAP Server Daemon
@@ -325,7 +343,7 @@ tcp   LISTEN 0      2048            [::]:389          [::]:*    users:(("slapd",
 ```
 
 ### 5. Allow ldap through the firewall
-```
+```bash
 [root@hammer14 ~]# firewall-cmd --add-service={ldap,ldaps} --permanent
 success
 [root@hammer14 ~]# firewall-cmd --reload
@@ -350,7 +368,8 @@ public (active)
 ```
 
 ### 6. Generate a password (Our example uses testpassword) This will return a salted SSHA password. Save this password and salted hash for later input
-```
+
+```bash
 [root@hammer14 ~]# echo "NOTE passwd helloworld"
 NOTE passwd helloworld
 [root@hammer14 ~]#
@@ -361,14 +380,17 @@ Re-enter new password:
 ```
 
 
-### 7. Change the password ```
+### 7. Change the password 
+
+```bash
 [root@hammer14 ~]# cat changerootpass.ldif
 dn: olcDatabase={0}config,cn=config
 changetype: modify
 replace: olcRootPW
 olcRootPW: {SSHA}picyvG7ylr/VVSiSfv4GoF8LvqcDMwPc
 ```
-```
+
+```bash
 [root@hammer14 ~]# cat changerootpass.ldif
 dn: olcDatabase={0}config,cn=config
 changetype: modify
@@ -381,8 +403,10 @@ SASL SSF: 0
 modifying entry "olcDatabase={0}config,cn=config"
 
 ```
+
 ### 8. Generate basic schemas
-```
+
+```bash
 [root@hammer14 ~]# ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldiff
 /etc/openldap/schema/cosine.ldiff: No such file or directory
 [root@hammer14 ~]# ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
@@ -408,9 +432,10 @@ adding new entry "cn=inetorgperson,cn=schema,cn=config"
 ```
 
 ### 9. Set up the domain (USE THE PASSWORD YOU GENERATED EARLIER)
+
 *vi setdomain.ldif*
 
-```
+```bash
 [root@hammer14 ~]# cat setdomain.ldif
 dn: olcDatabase={1}monitor,cn=config
 changetype: modify
@@ -442,7 +467,8 @@ olcAccess: {2}to * by dn="cn=Manager,dc=prolug,dc=lan" write by * read
 ```
 
 ### 10. Run it
-```
+
+```bash
 [root@hammer14 ~]# ldapmodify -Y EXTERNAL -H ldapi:/// -f setdomain.ldif
 SASL/EXTERNAL authentication started
 SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
@@ -489,7 +515,8 @@ modifying entry "olcDatabase={2}mdb,cn=config"
 
 
 ### 11. Search and verify the domain is working.
-```
+
+```bash
 [root@hammer14 ~]# ldapsearch -H ldap:// -x -s base -b "" -LLL "namingContexts"
 dn:
 namingContexts: dc=prolug,dc=lan
@@ -499,8 +526,10 @@ namingContexts: dc=prolug,dc=lan
 ```
 
 ### 12. Add the base group and organization.
+
 *vi addou.ldif*
-```
+
+```bash
 [root@hammer14 ~]# cat addou.ldiff
 dn: dc=prolug,dc=lan
 objectClass: top
@@ -525,7 +554,7 @@ ou: Group
 ```
 *run it*
 *enter the password from earlier helloworld*
-```
+```bash
 [root@hammer14 ~]# ldapadd -x -D cn=Manager,dc=prolug,dc=lan -W -f addou.ldif
 Enter LDAP Password:
 adding new entry "dc=prolug,dc=lan"
@@ -540,7 +569,8 @@ adding new entry "ou=Group,dc=prolug,dc=lan"
 
 ```
 ### 13. Verifying
-```
+
+```bash
 root@hammer14 ~]# ldapsearch -H ldap:// -x -s base -b "" -LLL "+"
 dn:
 structuralObjectClass: OpenLDAProotDSE
@@ -608,7 +638,8 @@ result: 0 Success
 
 ### 14. Add a user
 ### *Generate a password (use testuser1234)*
-```
+
+```bash
 [root@hammer14 ~]# slappasswd
 New password:
 Re-enter new password:
@@ -617,7 +648,7 @@ Re-enter new password:
 
 ```
 *vi adduser.ldif*
-```
+```bash
 [root@hammer14 ~]# cat adduser.ldif
 dn: uid=testuser,ou=People,dc=prolug,dc=lan
 objectClass: inetOrgPerson
@@ -644,7 +675,7 @@ memberUid: testuser
 
 ### 15. run it
 *I used the original helloworld pssword*
-```
+```bash
 [root@hammer14 ~]# ldapadd -x -D cn=Manager,dc=prolug,dc=lan -W -f adduser.ldif
 Enter LDAP Password:
 adding new entry "uid=testuser,ou=People,dc=prolug,dc=lan"
@@ -655,7 +686,8 @@ adding new entry "cn=testuser,ou=Group,dc=prolug,dc=lan"
 ```
 
 ### 16. Verify that your user is in the system.
-```
+
+```bash
 [root@hammer14 ~]# ldapsearch -x -b "ou=People,dc=prolug,dc=lan"
 # extended LDIF
 #
@@ -696,7 +728,7 @@ result: 0 Success
 ```
 
 ### 17. Secure the system with TLS (accept all defaults)
-```
+```bash
 [root@hammer14 ~]# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/tls/ldapserver.key -out /etc/pki/tls/ldapserver.crt
 .+..........+........+....+...........+....+..+.+..+.+..+....+........+.+..............+......+.+.....+...+......+.+......+.....+...+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*...........+...+...+.....+............+....+...+..+......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.......+.....+....+...+............+......+............+........+.........+...+.............+.....+....+.....+.+...........+....+......+...............+......+...+.....+......+.+..............+.+.....+...+...............+....+.....+.+..............+.........................+..+....+...........+...+..........+........+...+....+...+.....+...+.........+.......+...+..................+.....+...+.+.....+.+........+......+.+...+......+...+.....+..................+.........+.+..............+..........+...+......+..............+.......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+..+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*...+......+.+.........+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -723,7 +755,8 @@ Email Address []:
 
 ```
 *vi tls.ldif*
-```
+
+```bash
 [root@hammer14 ~]# cat tls.ldif
 dn: cn=config
 changetype: modify
@@ -737,7 +770,8 @@ add: olcTLSCertificateFile
 olcTLSCertificateFile: /etc/pki/tls/ldapserver.crt
 
 ```
-```
+
+```bash
 [root@hammer14 ~]# ldapadd -Y EXTERNAL -H ldapi:/// -f tls.ldif
 SASL/EXTERNAL authentication started
 SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
@@ -749,7 +783,9 @@ modifying entry "cn=config"
 ```
 
 ### 18. Fix the /etc/openldap/ldap.conf to allow for certs
+
 *vi /etc/openldap/ldap.conf*
+
 ```
 [root@hammer14 ~]# grep -v ^# /etc/openldap/ldap.conf | uniq
 
@@ -796,8 +832,8 @@ SASL_NOCANON    on
 ## SSSD Configuration and Realmd join to LDAP
 
 ### 1. Install sssd, configure, and validate that the user is seen by the system
-```
 
+```bash
 [root@hammer14 ~]# dnf install openldap-clients sssd sssd-ldap oddjob-mkhomedir authselect
 Last metadata expiration check: 2:30:18 ago on Fri May 23 17:40:04 2025.
 Package openldap-clients-2.6.6-3.el9.x86_64 is already installed.
@@ -1043,7 +1079,7 @@ Complete!
 
 ```
 
-```
+```bash
 root@hammer14 ~]# authselect select sssd with-mkhomedir --force
 Backup stored at /var/lib/authselect/backups/2025-05-24-03-12-46.SzyKN4
 Profile "sssd" was selected.
@@ -1083,8 +1119,10 @@ May 23 20:14:11 hammer14 systemd[1]: Started privileged operations for unprivil>
 
 
 ### 2. Uncomment and fix the lines in /etc/openldap/ldap.conf
+
 *vi /etc/openldap/ldap.conf*
-```
+
+```bash
 [root@hammer14 ~]# grep -v ^# /etc/openldap/ldap.conf | uniq                    
 BASE dc=prolug,dc=lan
 URI ldap://ldap.prolug.lan/
@@ -1099,9 +1137,10 @@ SASL_NOCANON    on
 ```
 
 ### 3. Edit the sssd.conf file
+
 *vi /etc/sssd/sssd.conf*
 
-```
+```bash
 [root@hammer14 ~]# vi /etc/sssd/sssd.conf
 [root@hammer14 ~]# cat /etc/sssd/sssd.conf
 [domain/default]
@@ -1123,7 +1162,8 @@ domains = default
 [nss]
 homedir_substring = /home
 ```
-```
+
+```bash
 [root@hammer14 ~]# chmod 0600 /etc/sssd/sssd.conf
 [root@hammer14 ~]#  systemctl start sssd
 [root@hammer14 ~]# systemctl status sssd
@@ -1152,7 +1192,8 @@ May 23 20:19:47 hammer14 systemd[1]: Started System Security Services Daemon.
 
 
 ### 4. Validate that the user can be seen
-```
+
+```bash
 [root@hammer14 ~]# id testuser
 uid=15000(testuser) gid=15000(testuser) groups=15000(testuser)
 
