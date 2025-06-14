@@ -17,16 +17,15 @@ Read about telemetry, logs, and traces.
 There are many good sources, even from Microsoft:
 https://microsoft.github.io/code-with-engineering-playbook/observability/log-vs-metric-vs-trace/
 
-a.    *How does the usage guidance of that blog (at bottom) align with your understanding of these three items?*
+### a.    *How does the usage guidance of that blog (at bottom) align with your understanding of these three items?*
 
 > This helps me understand that installing a collector to receive various metris is of upmost importance.  Systems like Grafana, ELK & splunk allow us to properly track an occurence of an event.  We need the metrics to know where to start looking in the logs.
 
-b.    *What other useful blogs or AI write-ups were you able to find?*
+### b.    *What other useful blogs or AI write-ups were you able to find?*
 
 https://betterstack.com/community/guides/observability/logging-metrics-tracing/
 
-
-c.    *What is the usefulness of this in securing your system?*
+### c.    *What is the usefulness of this in securing your system?*
 
 > All three of these are totally useful and necessary in securing ur systems.
 The concept of traces does appear to be dependent on an application support team.  The other two are completely within the realm of a system administrator.
@@ -39,14 +38,15 @@ https://discord.com/channels/611027490848374811/1370814206915379251/137744671977
 Unit 7 Discussion Post 2: When we think of our systems, sometimes an airgapped system is simple to think about because everything is closed in. The idea of alerting or reporting is the opposite. We are trying to get the correct, timely, and important information out of the system when and where it is needed.
 
  Read the summary at the top of: https://docs.google.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/edit?tab=t.0
- *a.    What is the litmus test for a page? (Sending something out of the system?)*
+
+### a.    What is the litmus test for a page? (Sending something out of the system?)*
 
 > Pages should be urgent, important, actionable, and real.
 
 
 
 
-*b.    What is over-monitoring v. under-monitoring. Do you agree with the assessment of the paper? Why or why not, in your experience?*
+### b.    What is over-monitoring v. under-monitoring. Do you agree with the assessment of the paper? Why or why not, in your experience?*
 
 
 > Err on the side of removing noisy alerts – over-monitoring is a harder problem to solve than under-monitoring.
@@ -54,7 +54,7 @@ Yes -in my experience the were always an operations team that receive the alerts
 
 
 
- *c.    What is cause-based v. symptom-based and where do they belong? Do you agree?*
+### c.    What is cause-based v. symptom-based and where do they belong? Do you agree?*
 
 > Include cause-based information in symptom-based pages or on dashboards, but avoid alerting directly on causes.
 - Cause-based alerts are bad (but sometimes necessary)

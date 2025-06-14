@@ -8,19 +8,20 @@
 
 ## Discussion Questions:
 
-Unit 4 Discussion Post 1: 
+### Unit 4 Discussion Post 1: 
 Review some of the blogs here:
 https://discord.com/channels/611027490848374811/1363211160467407002/1365753668200038411
 
-Security - Unit 4 Discussion Post 1: Review some of the blogs here: https://aws.amazon.com/search/?searchQuery=air+gapped#facet_type=blogs&page=1 https://aws.amazon.com/blogs/security/tag/bastion-host/ or that you find on your own about air-gapped systems.
+### Security - Unit 4 Discussion Post 1: 
+Review some of the blogs here: https://aws.amazon.com/search/?searchQuery=air+gapped#facet_type=blogs&page=1 https://aws.amazon.com/blogs/security/tag/bastion-host/ or that you find on your own about air-gapped systems.
 
-What seems to be the theme of air-gapped systems?
+### What seems to be the theme of air-gapped systems?
 
 > The theme for air-gapped systems is that any connection to the internet is the greatest threat and that air-gapped systems provide the solution to this problem.
 The theme for bastions is that it is a single point of entry thus a single point of infiltration/exfiltration.
 
 
-What seems to be their purpose?
+### What seems to be their purpose?
 
 > An air-gapped systems’ purpose is completely isolate the system or network to protect the data and information on the network.  
 The main purpose is to ensure the security of the company or organizations computers.  
@@ -30,7 +31,7 @@ The bastion systems’ purpose is to withstand attacks and provide a safe gatewa
 It is usually placed in a DMZ, where anyone can access from the outside, such as a way to transfer files with vendors.
 
 
-If you use google, or an AI, what are some of the common themes that come up when asked about air-gapped or bastion systems?
+### If you use google, or an AI, what are some of the common themes that come up when asked about air-gapped or bastion systems?
 - isolation
 - cannot be hacked
 - disconnected
@@ -40,10 +41,11 @@ If you use google, or an AI, what are some of the common themes that come up whe
 - secure access
 
 
-Unit 4 Discussion Post 2: Do a Google or AI search of topics around jailing a user or
+### Unit 4 Discussion Post 2: Do a Google or AI search of topics around jailing a user or
 processes in Linux.
 https://discord.com/channels/611027490848374811/1363211294013915399/1365758289081798786
-Security - Unit 4 Discussion Post 2: Do a Google or AI search of topics around jailing a user or processes in Linux. 
+### Security - Unit 4 Discussion Post 2: 
+Do a Google or AI search of topics around jailing a user or processes in Linux. 
 
 **Can you enumerate the methods of jailing users?**
 - use /etc/passwd (or nis, nss, ldap, ad) and the shell entry to limit users to a jailed script (instead of a shell) as shown in the ProLUG lecture and lab.  This also uses chroot to limit the user to a subset of files.

@@ -13,7 +13,9 @@ There are 16 Stigs that involve PAM for RHEL 9. Read the guide from Rocky Linux 
 
 https://discord.com/channels/611027490848374811/1360636294673465626/1362539851420799078
 
-Security - Unit 3 Discussion Post 1: There are 16 Stigs that involve PAM for RHEL 9. Read the guide from Rocky Linux
+### Security - Unit 3 Discussion Post 1: 
+There are 16 Stigs that involve PAM for RHEL 9. Read the guide from Rocky Linux
+
 ### What are the mechanisms and how do they affect PAM functionality?
 - account
 - auth
@@ -70,15 +72,14 @@ https://discord.com/channels/611027490848374811/1360640634548912430/136289769564
 
 Security - Unit 3 Discussion Post 2: Read about active directory (or LDAP) configurations of Linux via sssd here: https://docs.rockylinux.org/guides/security/authentication/active_directory_authentication/ 
 
-1.    Why do we not want to just use local authentication in Linux? Or really any system?
+### 1.    Why do we not want to just use local authentication in Linux? Or really any system?
 
 
 > Because most enterprises use windows as their desktop it makes sense to share the same username password with the Linux environment.  We have learned from the video that Microsoft AD has 90% of the market – so that product is the standard to connect to Linux servers.  This allows us to implement single sign on SSO across the environment using the username / password that users are most likely to remember… the one they use for their desktop.  This also helps administrators because they no longer have to maintain accounts for every single separate machine.  Another term that is used to describe this setup is Federated authentication.
 
 
-2.    There are 4 SSSD STIGS.
-
-a.    What are they? b. What do they seek to do with the system?
+### 2.    There are 4 SSSD STIGS.
+### a.    What are they? b. What do they seek to do with the system?
 
 
 > V-258019 : Allow users to manually invoke a session lock when leaving their terminal/desk.

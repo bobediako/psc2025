@@ -17,19 +17,19 @@ Security
 Unit 8 Discussion Post 1:
 Read about configuration management here: https://en.wikipedia.org/wiki/Configuration_management
 
-a.    *What overlap of terms and concepts do you see from this week’s meeting?*
+### a.    *What overlap of terms and concepts do you see from this week’s meeting?*
 
 - Configuration Management originated in the United States Department of Defense in the 1950s as a technical management discipline for hardware material items—and it is now a standard practice in virtually every industry.
 
  - a standardized, systematic approach that ensures consistency
 
 
-b.    *What are some of the standards and guidelines organizations involved with configuration management?*
+### b.    *What are some of the standards and guidelines organizations involved with configuration management?*
 
 - ISO 10007 Quality management systems – Guidelines for configuration management
 
 
-c.    *Do you recognize them from other IT activities?*
+### c.    *Do you recognize them from other IT activities?*
 
 - ISO 10007 includes change control and configuration audits
 
@@ -42,13 +42,13 @@ Unit 8 Discussion Post 2:
 Review the SRE guide to treating configurations as code. Read as much as you like, but focus down on the “Practical Advice” section: https://google.github.io/building-secure-and-reliable-systems/raw/ch14.html#treat_configuration_as_code
 
 
-a.    *What are the best practices that you can use in your configuration management adherence?*
+### a.    *What are the best practices that you can use in your configuration management adherence?*
 
 - the best practices regarding code versioning and change review
 - requiring that configuration changes be checked in, reviewed, and tested prior to deployment
 
 
-b.    *What are the security threats and how can you mitigate them?*
+### b.    *What are the security threats and how can you mitigate them?*
 - security vulnerability scans prevent the release of code with known vulnerabilities
 - a deployment policy requiring packages and code come from approved source repositories
 - separate privileges so that custom build scripts do not have access to the signing key
@@ -56,7 +56,7 @@ b.    *What are the security threats and how can you mitigate them?*
 
 
 
-c.    *Why might it be good to know this as you design a CMDB or CI/CD pipeline?*
+### c.    *Why might it be good to know this as you design a CMDB or CI/CD pipeline?*
 - we need to "Verify Artifacts, Not Just People"...
 
 - we need to ensure the safety of the SOURCE -> BUILD -> TEST -> DEPLOY pipeline

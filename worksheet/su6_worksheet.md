@@ -17,7 +17,7 @@ https://discord.com/channels/611027490848374811/1368299025648058498/136947867062
 Security Unit 6 Discussion Post 1:  
 Review chapter 15 of the SRE book: https://google.github.io/building-secure-and-reliable-systems/raw/ch15.html#collect_appropriate_and_useful_logs. 
 There are 14 references at the end of the chapter. Follow them for more information. One of them:  https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/  should be reviewed for question “c”.
-a.    What are some concepts that are new to you?
+### a.    What are some concepts that are new to you?
 **Data anonymization or pseudonymization**
 
 > This is essential in financial and health service industries.  It allows for PII (Personally Identifiable Information) to be kept secret.  This is a function of privacy.
@@ -47,24 +47,24 @@ The full data is kept for a short amount of time while the summary is kept for m
 https://discord.com/channels/611027490848374811/1368299171282681928/1369429034399830128
 
 Unit 6 Discussion Post 2: Read sre.google/sre-book/monitoring-distributed-systems/ 
-*What interesting or new things do you learn in this reading? *
+### What interesting or new things do you learn in this reading? 
 
 > White-box monitoring
 Black-box monitoring
 Four golden signals (latency, traffic, errors, saturation)
 
 
-*What may you want to know more about? *
+### What may you want to know more about? 
 
 > Ansible vs puppet vs chef
 
 
-*What are the “4 golden signals”?*
+### What are the “4 golden signals”?
 
 > Four golden signals (latency, traffic, errors, saturation)
 
 
-*After reading these, why is immutability so important to logging?*
+### After reading these, why is immutability so important to logging?
 
 > logs need to simple and not overly verbose.  Logs need to provide the relevant information. *edit* immutable refers to protecting the logs from being changed, so that what has been recorded can be trusted. The importance of immutability is that the log should be a permanent and unchangeable record of the past.  We keep logs to record security and historical events.  But if a bad actor could change things in our system... if a bad actor can change the logs too... then we have no security.  As in the video- logs should be 'chiseled in stone.'
  
@@ -73,7 +73,7 @@ Four golden signals (latency, traffic, errors, saturation)
 
 
 
-*What do you think the other required items are for logging to be effective?*
+### What do you think the other required items are for logging to be effective?
 
 > Correct timing of an error.  Knowing when `it` happened is essential.  This means ensuring the clocks of all the servers in sync with each other.  It is important to have tools that allow for comparing output in different time zones easily when supporting a global environment.  This is done via services like NTP
 
@@ -130,7 +130,7 @@ SIEM :
 
 
 
-
+---
 
 Notes During Lecture/Class: 
 

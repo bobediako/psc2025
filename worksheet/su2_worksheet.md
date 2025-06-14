@@ -15,14 +15,15 @@ https://discord.com/channels/611027490848374811/1358101042159419542/136039863435
 
 ### Security - Unit 2 Discussion Post 1: 
 There are 401 stigs for RHEL 9. If you filter in your stig viewer for sysctl there are 33 (mostly network focused), ssh - 39, and network - 58. Now there are some overlaps between those, but review them and answer these questions
-> As systems engineers why are we focused on protecting the network portion of our server builds?
+
+### As systems engineers why are we focused on protecting the network portion of our server builds?
 
 Our network is how we interact with the server.  
 Gone of the days of servers in locked rooms.  
 The network is our primary point of failure for unauthorized access.  
 
 
-> Why is it important to understand all the possible ingress points to our servers that exist?
+### Why is it important to understand all the possible ingress points to our servers that exist?
 
 The ingress points are how we make valid connections to the server. 
 These are how the various outside services we rely upon connect to a machine.
@@ -30,7 +31,7 @@ Hackers or unauthorized users will sometimes enter systems through network vulne
 Network exploits, like two from 2017 called NotPetya and WannaCry, are probably the biggest threat.
 
 
-> Why is it so important to understand the behaviors of processes that are connecting on those ingress points?
+### Why is it so important to understand the behaviors of processes that are connecting on those ingress points?
 
 During an attack or simply during a system wide failure, having a solid previous understanding of the system, and how it normally works is essential to troubleshooting.  
 Spending our free time and our quiet time, making sure that we know the ins and outs of our servers, makes things much easier during a crisis.
@@ -45,7 +46,7 @@ https://discord.com/channels/611027490848374811/1358101115173863636/136183711355
 ### Security - Unit 2 Discussion Post 2: 
 Read this: https://ciq.com/blog/demystifying-and-troubleshooting-name-resolution-in-rocky-linux/ or similar blogs on DNS and host file configurations.
 
-> What is the significance of the nsswitch.conf file?
+### What is the significance of the nsswitch.conf file?
 
 In this question we are focused on the “host” line of Nsswitch,conf 
 The order of this entry matters – “files” is always first 
@@ -61,10 +62,11 @@ We also want to make our lives easier when accessing hosts on our intranet so we
 p.s. I found that there are some other cool options for this file such as “option attempts” & “option timeout” that are useful when listing multiple nameservers for redundancy.
 
 
-> What are security problems associated with DNS and common exploits? 
+### What are security problems associated with DNS and common exploits? 
 (May have to look into some more blogs or posts for this)
 
 Common exploits include:
+
 DNS Spoofing(cache poisoning)
 This involves inserting false info into the DNS cache, so that DNS queries return incorrect responses, that will lead users to likely malicious sites.
 
