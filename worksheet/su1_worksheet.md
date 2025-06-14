@@ -1,12 +1,15 @@
-﻿# ProLUG Security Engineering Unit 1 Worksheet
+﻿## ProLUG Security Engineering 
+# Unit 1 Worksheet
 
 
-*Instructions
-Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.
-*
+*Instructions*
+*Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.*
+
+---
 
 ## Discussion Questions:
-### Unit 2 Discussion Post 1: The first question of this course is, "What is Security?"
+### Unit 2 Discussion Post 1: 
+The first question of this course is, "What is Security?"
 
 https://discord.com/channels/611027490848374811/1353052899047116912/1356016174869250228
 
@@ -29,7 +32,7 @@ The integrity of a system can be protected by ensuring end to end encryption.
 Availability of a system is essential for access.  The servers must be up and their load must be manageable. The administration and his team need to be proactive in protecting the system.
 The proactive stance appears to directly connect to the architects, administrators and operators using their varied authority to define controls to protect the system. They require the will to follow the rules already set.  They need to follow up with all three to ensure rules aren’t broken.  To ensure open doors and windows are not ignored.
 
-
+---
 
 ### Unit 2 Discussion Post 2: Find a STIG or compliance requirement that you do not agree is necessary for a server or service build.
 
@@ -57,7 +60,7 @@ Defend why you think it is not necessary.
 •    My defense would be to contact the application managers for each of the related applications and ask for their documents on user access.  There is no practical way in any mid-to-large environment for the admin to just delete accounts because they think someone is sharing passwords.  
 •    It’s likely that an application itself uses a shared account for various tasks.  This would be documented in the application managers’ documents.  It’s an app issue at heart. The admin can’t do anything about this stig and shouldn’t be removing accounts at will.
 
-
+---
 
 ## Definitions/Terminology
 
@@ -100,6 +103,8 @@ STIG:
 
     > Security Technical Implementation Guides as defined by the US DOD (DISA).  STIG's appear to be the US governments version of industry standard quarterly releases.  The CVE program by MITRE is another similar program. Before that companies regularly release patches on a quarterly basis under various names such as critical patch releases or updates.
 
+
+---
 
 Notes During Lecture/Class:
 https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html`

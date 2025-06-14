@@ -1,13 +1,15 @@
-# ProLUG Security Engineering 
-## Unit 6 Worksheet 
+## ProLUG Security Engineering 
+# Unit 6 Worksheet 
  
-*Instructions 
-Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until 
-the end to turn them in as a final submission packet. *
+*Instructions*
+*Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.*
+
+---
 
 ## Discussion Questions:
 
-### Unit 6 Discussion Post 1: Review chapter 15 of the SRE book: 
+### Unit 6 Discussion Post 1: 
+Review chapter 15 of the SRE book: 
 
 
 https://discord.com/channels/611027490848374811/1368299025648058498/1369478670623703163
@@ -75,6 +77,8 @@ In this case, if the format is immutable ( unchanging set of permanent categorie
 ```
 Correct timing of an error.  Knowing when `it` happened is essential.  This means ensuring the clocks of all the servers in sync with each other.  It is important to have tools that allow for comparing output in different time zones easily when supporting a global environment.  This is done via services like NTP
 ```
+
+---
 
 ## Definitions/Terminology 
 

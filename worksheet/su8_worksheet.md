@@ -1,12 +1,11 @@
-# ProLUG Security Engineering
+## ProLUG Security Engineering
 
 # Unit 8 Worksheet
 
-## Instructions
+*Instructions*
+*Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.*
 
-Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
-the end to turn them in as a final submission packet.
-
+---
 
 ## Discussion Questions:
 
@@ -62,6 +61,7 @@ c.    *Why might it be good to know this as you design a CMDB or CI/CD pipeline?
 
 - we need to ensure the safety of the SOURCE -> BUILD -> TEST -> DEPLOY pipeline
 
+---
 
 ## Definitions/Terminology
 

@@ -1,13 +1,15 @@
-# ProLUG Security Engineering
+## ProLUG Security Engineering
 
-## Unit 4 Worksheet
-Instructions
-Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
-the end to turn them in as a final submission packet.
+# Unit 4 Worksheet
+*Instructions*
+*Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.*
+
+---
 
 ## Discussion Questions:
 
-Unit 4 Discussion Post 1: Review some of the blogs here:
+Unit 4 Discussion Post 1: 
+Review some of the blogs here:
 https://discord.com/channels/611027490848374811/1363211160467407002/1365753668200038411
 
 Security - Unit 4 Discussion Post 1: Review some of the blogs here: https://aws.amazon.com/search/?searchQuery=air+gapped#facet_type=blogs&page=1 https://aws.amazon.com/blogs/security/tag/bastion-host/ or that you find on your own about air-gapped systems.
@@ -53,6 +55,7 @@ I am jailed as a user when I use the ProLUG lab and the killercoda environments.
 In the past I was also jailed when I entered a DMZ host to upload or download files from a vendor. 
 ```
 
+---
 
 ## Definitions/Terminology
 
@@ -94,7 +97,7 @@ Namespaces allow the OS to provide a container process with an isolated view of 
 
 
 
-
+---
 
 Notes During Lecture/Class:
 Links:

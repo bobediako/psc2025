@@ -95,7 +95,7 @@ MariaDB [(none)]> select host,user,max_user_connections, max_connections from my
 > Below is the section of the file to be updated
 > server_audit_output_type = 'syslog' 
 > 
-```
+```bash
 [root@hammer14 ~]# cat -n /etc/my.cnf.d/mariadb-server.cnf | head -22
      1  #
      2  # These groups are read by MariaDB server.

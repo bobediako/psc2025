@@ -1,10 +1,11 @@
-# ProLUG Security Engineering
+## ProLUG Security Engineering
 
-## Unit 7 Worksheet
+# Unit 7 Worksheet
 
-*Instructions
-Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until
-the end to turn them in as a final submission packet.*
+*Instructions*
+*Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.*
+
+---
 
 ## Discussion Questions:
 

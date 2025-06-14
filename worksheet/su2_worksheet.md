@@ -1,9 +1,11 @@
-﻿# ProLUG Security Engineering Unit 2 Worksheet
+﻿## ProLUG Security Engineering 
+# Unit 2 Worksheet
 
 
-*Instructions
-Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.
-*
+*Instructions*
+*Fill out this sheet as you progress through the lab and discussions. Hold your worksheets until the end to turn them in as a final submission packet.*
+
+---
 
 ## Discussion Questions:
 
@@ -73,7 +75,7 @@ DNS Tunneling
 This is a technique used to bypass network firewalls.  This exploit is used to exfiltrate data from a compromised system.
 
 
-
+---
 
 ## Definitions/Terminology
 
@@ -115,6 +117,7 @@ ngrep:
 
     > ngrep is similar to tcpdump but adds regex searching of the output.  Essentially nrep is tcpdump plus grep.
 
+---
 
 Notes During Lecture/Class:
 
