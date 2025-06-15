@@ -66,6 +66,7 @@ FIPS mode is disabled.
 
 ### What is the fix?
 >  No fix necessary
+
 ```bash
 [root@hammer14 evaluation]# sysctl -a | grep ^net.ipv4.tcp_s
 net.ipv4.tcp_sack = 1
@@ -180,6 +181,7 @@ net.ipv4.conf.default.send_redirects = 0
 
 ### Is it set properly on your system?
 > Yes
+
 ```bash
 [root@hammer14 evaluation]# sysctl -a | grep ^net.ipv4.conf.default.accept_redirects
 net.ipv4.conf.default.accept_redirects = 0
@@ -201,7 +203,7 @@ The presence of "martian" packets (which have impossible addresses) as well as s
 `
 
 ### What type of control is being implemented?
-> tech Prev
+> techical Preventative
 
 
 ### Is it set properly on your system?
@@ -224,7 +226,7 @@ net.ipv4.conf.lo.log_martians = 0
 > 1 just mentions the word firewall but refers to the boot process
 
 ### What types of controls are they?
- t p
+ technical preventative
 
 ## Expose a network port through your firewall
 ```bash
